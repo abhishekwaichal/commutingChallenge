@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import commutingChallenge.util.Logger;
+
 /**
  * @author Abhishek Waichal
  * 
@@ -21,6 +23,7 @@ import java.util.Stack;
  */
 public class Driver {
 
+	private static int debugValue = 1;
 	private int numNodes;
 	private Stack<Integer> stack;
 	private FileReader in = null;
@@ -30,7 +33,9 @@ public class Driver {
 
 	public Driver(String args) {
 
-		args = 	"inputCoordinates.txt";
+		Logger.printDebug(1, "In Driver Class's Constructor");		
+
+//		args = 	"inputCoordinates.txt"
 		// FilePath = "//" + args; //windows
 		FilePath = "\\" + args; // unix
 		// System.out.println(currentDirectory + FilePath);
@@ -77,8 +82,16 @@ public class Driver {
 	 */
 	public static void main(String[] args) throws Throwable {
 
+		debugValue = 0;
+		Logger.setDebugValue(debugValue);
+
+		if (args.length != 1) {
+			Logger.printDebug(2, "ERROR: Invalid number of arguments");
+			System.exit(0);
+		}
+
 		int number_of_nodes;
-		Driver comm = new Driver(args[0]);// ("inputCoordinates.txt"); First input argument is the file name. 
+		Driver comm = new Driver("inputCoordinates.txt"); //(args[0]);//First input argument is the file name. 
 
 		number_of_nodes = 10;
 
