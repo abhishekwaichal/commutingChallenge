@@ -30,6 +30,7 @@ public class Driver {
 
 	public Driver(String args) {
 
+		args = 	"inputCoordinates.txt";
 		// FilePath = "//" + args; //windows
 		FilePath = "\\" + args; // unix
 		// System.out.println(currentDirectory + FilePath);
