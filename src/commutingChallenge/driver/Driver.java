@@ -31,6 +31,10 @@ public class Driver {
 	private String FilePath;
 	private BufferedReader br = null;
 
+	public Driver(){
+		
+	}
+	
 	public Driver(String args) {
 
 		Logger.printDebug(1, "In Driver Class's Constructor");		
@@ -50,7 +54,11 @@ public class Driver {
 		stack = new Stack<Integer>();
 	}
 
-	
+	/*
+	 * 
+	 * 
+	 *
+	 */
 
 	public Double distance(Double lat1, Double lon1, Double lat2, Double lon2) {
 
@@ -84,12 +92,13 @@ public class Driver {
 
 		debugValue = 0;
 		Logger.setDebugValue(debugValue);
-
+/*
 		if (args.length != 1) {
 			Logger.printDebug(2, "ERROR: Invalid number of arguments");
 			System.exit(0);
 		}
-
+*/
+		
 		int number_of_nodes;
 		Driver comm = new Driver("inputCoordinates.txt"); //(args[0]);//First input argument is the file name. 
 
